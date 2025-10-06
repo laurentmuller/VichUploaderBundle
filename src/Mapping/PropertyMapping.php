@@ -117,7 +117,7 @@ final class PropertyMapping
      */
     public function erase(object $obj): void
     {
-        if (false === $this->mapping['erase_fields']) {
+        if (\is_array($this->mapping) && isset($this->mapping['erase_fields']) && false === $this->mapping['erase_fields']) {
             return;
         }
 
@@ -298,7 +298,7 @@ final class PropertyMapping
             return '';
         }
 
-        $dir = $this->getDirectoryNamer()->directoryName($obj, $this);
+        $dir = $this->getDirectoryNamer()?->directoryName($obj, $this);
 
         // strip the trailing directory separator if needed
         return $dir ? \rtrim($dir, '/\\') : $dir;
