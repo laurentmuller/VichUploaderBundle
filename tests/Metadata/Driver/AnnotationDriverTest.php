@@ -30,6 +30,7 @@ final class AnnotationDriverTest extends TestCase
 
     protected function setUp(): void
     {
+        // @phpstan-ignore-next-line function.impossibleType
         if (!\class_exists(Reader::class)) {
             $this->markTestSkipped('The doctrine/annotations package is not installed');
         }
