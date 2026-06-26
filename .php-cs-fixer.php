@@ -12,7 +12,7 @@ return (new PhpCsFixer\Config())
         '@Symfony:risky' => true,
         '@PHP8x1Migration' => true,
         '@PHPUnit10x0Migration:risky' => true,
-        'declare_strict_types' => false,
+        'declare_strict_types' => ['strategy' => 'remove'],
         'native_function_invocation' => [
             'include' => ['@internal'],
         ],
